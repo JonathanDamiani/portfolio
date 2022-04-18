@@ -12,6 +12,9 @@ export interface IMainFields {
 
   /** Description */
   description?: Document | undefined
+
+  /** Navigation */
+  navigation?: INavigation | undefined
 }
 
 /** Main information of website */
@@ -26,6 +29,31 @@ export interface IMain extends Entry<IMainFields> {
     contentType: {
       sys: {
         id: 'main'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export interface INavigationFields {
+  /** title */
+  title?: string | undefined
+
+  /** links */
+  links?: Record<string, any> | undefined
+}
+
+export interface INavigation extends Entry<INavigationFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'navigation'
         linkType: 'ContentType'
         type: 'Link'
       }
@@ -138,7 +166,13 @@ export interface IWorkPiece extends Entry<IWorkPieceFields> {
   }
 }
 
-export type CONTENT_TYPE = 'main' | 'skill' | 'skillList' | 'tags' | 'workPiece'
+export type CONTENT_TYPE =
+  | 'main'
+  | 'navigation'
+  | 'skill'
+  | 'skillList'
+  | 'tags'
+  | 'workPiece'
 
 export type LOCALE_CODE = 'en-US' | 'pt-BR'
 
