@@ -3,7 +3,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { IMainFields } from '../src/@types/contentful'
 import ContentService from '../src/utils/content-service'
-import { Nav } from '../src/containers'
+import { Nav, SideMenu } from '../src/containers'
 
 interface Props {
   main: IMainFields
@@ -18,10 +18,11 @@ const Home: NextPage<Props> = ({ main, navigationLinks }) => {
         <meta name="description" content="Frontend Engineer Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {navigationLinks !== undefined && <Nav links={navigationLinks} />}
+      <Nav links={navigationLinks} />
       <main className="main">
         <div>{documentToReactComponents(main.description!)}</div>
       </main>
+      <SideMenu />
     </>
   )
 }

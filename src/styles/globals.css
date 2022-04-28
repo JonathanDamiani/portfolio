@@ -7,9 +7,20 @@ body {
   position: relative;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 * {
@@ -17,13 +28,11 @@ a {
 }
 
 :root {
-  --background: red;
-  --foreground: black;
+  --text-color-fixed-light: #fff;
+  --background-color-fixed-dark: rgba(0, 0, 0, 0.8);
 }
 
 [data-theme='dark'] {
-  --background: red;
-  --foreground: white;
 }
 
 .main {
@@ -31,4 +40,11 @@ a {
   position: relative;
   max-width: 2560px;
   margin: 0 auto;
+}
+
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }

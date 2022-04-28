@@ -1,18 +1,29 @@
 import React from 'react'
 import styles from './Nav.module.css'
-type Props = {
-  links: Record<string, any>
+import { LanguageSelector } from '../'
+
+type NavProps = {
+  links?: Record<string, any>
 }
 
-const Nav = (props: Props) => {
-  const { links } = props
+const Nav = ({ links }: NavProps) => {
   return (
-    <nav className={styles.container}>
-      <ul>
-        {links.map((link: Record<string, any>, index: number) => {
-          return <li key={index}>{link.name}</li>
-        })}
-      </ul>
+    <nav className={styles.wrapper}>
+      <div className={`${styles.container} grid-container`}>
+        <div>
+          <h1>Jonathan Damiani</h1>
+        </div>
+        <ul className={styles.links}>
+          {links?.map((link: Record<string, any>, index: number) => {
+            return (
+              <li className={styles.link} key={index}>
+                <a href={link.link}>{link.name}</a>
+              </li>
+            )
+          })}
+          <LanguageSelector />
+        </ul>
+      </div>
     </nav>
   )
 }

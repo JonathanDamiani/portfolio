@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.container button {
+  cursor: pointer;
+  color: var(--text-color-fixed-light);
+}
+
+.separator {
+  height: 14px;
+  width: 1px;
+  background-color: var(--text-color-fixed-light);
+}
+
+.button {
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.isButtonActive {
+  opacity: 1;
+  font-weight: bold;
+}
